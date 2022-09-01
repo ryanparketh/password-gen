@@ -29,13 +29,13 @@ let numberChoice = window.confirm ('Click OK to include number characters');
 if (lowerCase){
     selection.concat(lowerCase)
 }
-if(uppercaseChoice){
+if(upperCase){
     selection.concat(upperCase)
 }
-if(specialChoice){
+if(special){
     selection.concat(special)
 }
-if (numberChoice){
+if (numbers){
     selection.concat(numbers)
 }
 
