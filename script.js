@@ -14,6 +14,7 @@ function generatePassword() {
     );
     if (Number.isNaN(length)) {
         alert('Password length must be a number');
+        return
     }
     if (length < 8) {
         alert('Password must contain at least 8 characters');
@@ -39,11 +40,16 @@ function generatePassword() {
     if (numberChoice) {
         selection = selection.concat(numbers)
     }
+
+let passwordString = ''
+
+for(let i = 0; i < length; i++){
+  console.log(selection[Math.floor(Math.random() * selection.length)])
 }
-function getRandom(arr){
-    return Math.floor(Math.random() * arr.length);
-    var randElement = arr[randIndex];
+    return passwordString
 }
+
+
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector('#password');
