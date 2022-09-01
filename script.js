@@ -8,39 +8,43 @@ let selection = [];
 var generateBTn;
 
 
-function generatePassword(){
+function generatePassword() {
     let length = parseInt(
         prompt('How many characters would you like your password to be?')
     );
-    if(Number.isNaN(length)){
+    if (Number.isNaN(length)) {
         alert('Password length must be a number');
     }
-    if(length < 8){
+    if (length < 8) {
         alert('Password must contain at least 8 characters');
     }
-    if(length > 128){
+    if (length > 128) {
         alert('Password must contain less then 128 characters');
     }
 
-let lowercaseChoice = window.confirm ('Click OK to include lowercase characters');
-let uppercaseChoice = window.confirm ('Click OK to include uppercase characters');
-let specialChoice = window.confirm('Click OK to include special characters');
-let numberChoice = window.confirm ('Click OK to include number characters');
-}
+    let lowercaseChoice = window.confirm('Click OK to include lowercase characters');
+    let uppercaseChoice = window.confirm('Click OK to include uppercase characters');
+    let specialChoice = window.confirm('Click OK to include special characters');
+    let numberChoice = window.confirm('Click OK to include number characters');
 
-if (lowerCase){
-    selection.concat(lowerCase)
+    if (lowercaseChoice) {
+        selection = selection.concat(lowerCase)
+    }
+    if (uppercaseChoice) {
+        selection = selection.concat(upperCase)
+    }
+    if (specialChoice) {
+        selection = selection.concat(special)
+    }
+    if (numberChoice) {
+        selection = selection.concat(numbers)
+    }
 }
-if(upperCase){
-    selection.concat(upperCase)
+function getRandom(arr){
+    return Math.floor(Math.random() * arr.length);
+    var randElement = arr[randIndex];
 }
-if(special){
-    selection.concat(special)
-}
-if (numbers){
-    selection.concat(numbers)
-}
-function writePassword(){
+function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector('#password');
     passwordText.value = password;
