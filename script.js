@@ -6,23 +6,20 @@ let special = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
 let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let selection = [];
 
-//create prompt for password
-let length = parseInt(
-    prompt('How many characters would you like your password to be?')
-);
-//create input valitation for limits for characters
-
-if(Number.isNaN(length)){
-    alert('Password length must be a number');
-}
-if(length < 8){
-    alert('Password must contain at least 8 characters');
-}
-if(length > 128){
-    alert('Password must contain less then 128 characters');
-}
 
 function writePassword(){
+    let length = parseInt(
+        prompt('How many characters would you like your password to be?')
+    );
+    if(Number.isNaN(length)){
+        alert('Password length must be a number');
+    }
+    if(length < 8){
+        alert('Password must contain at least 8 characters');
+    }
+    if(length > 128){
+        alert('Password must contain less then 128 characters');
+    }
 let lowercaseChoice = window.confirm ('Click OK to include lowercase characters');
 let uppercaseChoice = window.confirm ('Click OK to include uppercase characters');
 let specialChoice = window.confirm('Click OK to include special characters');
