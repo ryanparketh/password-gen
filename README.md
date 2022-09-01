@@ -4,7 +4,7 @@
 I used JavaScript to create a randomized password generator.
 
 ## Live Website
-[link to live website](file:///Users/ryanpark/bootcamp/password-gen/index.html)
+[link to live website](https://ryanparketh.github.io/password-gen/)
 
 
 ## Screenshot 
