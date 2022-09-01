@@ -11,9 +11,15 @@ let length = parseInt(
     prompt('How many characters would you like your password to be?')
 );
 //create input valitation for limits for characters
-while (length <=8 || length >= 128) {
-    window.alert('Password length cannot be shorter then 8 characters and be longer than 128 characters');
-    return null;
+
+if(Number.isNaN(length)){
+    alert('Password length must be a number');
+}
+if(length < 8){
+    alert('Password must contain at least 8 characters');
+}
+if(length > 128){
+    alert('Password must contain less then 128 characters');
 }
 
 function writePassword(){
@@ -23,7 +29,7 @@ let specialChoice = window.confirm('Click OK to include special characters');
 let numberChoice = window.confirm ('Click OK to include number characters');
 }
 
-if (lowercaseChoice){
+if (lowerCase){
     selection.concat(lowerCase)
 }
 if(uppercaseChoice){
