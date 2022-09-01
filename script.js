@@ -4,25 +4,26 @@ let lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 let upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'Z', 'X', 'Y', 'Z'];
 let special = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
 let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-let selection = [];
 var generateBTn;
 
 
 function generatePassword() {
+    let selection = [];
+
     let length = parseInt(
         prompt('How many characters would you like your password to be?')
     );
     if (Number.isNaN(length)) {
         alert('Password length must be a number');
-        return
+        return '';
     }
     if (length < 8) {
         alert('Password must contain at least 8 characters');
-        return
+        return '';
     }
     if (length > 128) {
         alert('Password must contain less then 128 characters'); 
-        return
+        return '';
     }
 
     let lowercaseChoice = window.confirm('Click OK to include lowercase characters');
@@ -43,10 +44,15 @@ function generatePassword() {
         selection = selection.concat(numbers)
     }
 
+    if(!lowercaseChoice && !uppercaseChoice && !specialChoice && !numberChoice){
+        alert('Password must contain one character');
+        return '';
+    }
+
 let passwordString = ''
 
 for(let i = 0; i < length; i++){
-  console.log(selection[Math.floor(Math.random() * selection.length)])
+  passwordString += selection[Math.floor(Math.random() * selection.length)]
 }
     return passwordString
 }
