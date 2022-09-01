@@ -18,9 +18,11 @@ function generatePassword() {
     }
     if (length < 8) {
         alert('Password must contain at least 8 characters');
+        return
     }
     if (length > 128) {
-        alert('Password must contain less then 128 characters');
+        alert('Password must contain less then 128 characters'); 
+        return
     }
 
     let lowercaseChoice = window.confirm('Click OK to include lowercase characters');
@@ -49,12 +51,6 @@ for(let i = 0; i < length; i++){
     return passwordString
 }
 
-
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector('#password');
-    passwordText.value = password;
-}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
